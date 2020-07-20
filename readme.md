@@ -2,6 +2,7 @@
 =============
 
 **I have no time to develop this plugin, so feel free to send pull request to this repo! :)**
+
 Removed requirement to prefix language files with "locale-"
 
 **TransPlug** is a simple plugin for JetBrains IDE (PhpStorm, WebStorm etc.)
