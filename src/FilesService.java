@@ -79,7 +79,7 @@ public class FilesService {
         this.isBusy = true;
 
         String path = this.project.getBasePath() + "/" + this.propertiesComponent.getValue("transPath", "");
-        path = path+"/locale-"+lang+".json";
+        path = path+lang+".json";
 
         File file = new File(path);
 
@@ -162,7 +162,7 @@ public class FilesService {
 
     private String getFileLanguage(String filename){
         try {
-            int localeIndex = filename.lastIndexOf("locale-");
+            int localeIndex = filename.lastIndexOf(".json");
 
             if(localeIndex < 0) throw new Exception();
 
