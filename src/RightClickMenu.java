@@ -94,12 +94,12 @@ public class RightClickMenu implements MouseListener {
         menu.add(addItem);
 
         for (String langCode : this.model.getLanguages()) {
-            JMenuItem openFile = new JMenuItem(Text.OPEN_FILE + "locale-" + langCode + ".json");
+            JMenuItem openFile = new JMenuItem(Text.OPEN_FILE + langCode + ".json");
             openFile.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String path = project.getBasePath() + "/" + PropertiesComponent.getInstance(project).getValue("transPath", "");
-                    File file = new File(path + "/locale-" + langCode + ".json");
+                    File file = new File(path + langCode + ".json");
                     try {
                         VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByIoFile(file);
                         FileEditorManager.getInstance(project).openFile(virtualFile, true, false);

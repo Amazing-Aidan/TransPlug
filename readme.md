@@ -10,7 +10,7 @@ It provides easy way to manage translation files in your project.
 
 How to use
 --
-1. Prepare translation files. All translations should be in one dir. Filename should be like `hereLangCode.json` for example `en.json`
+1. Prepare translation files. All translations must be in one dir with **nothing else in that dir** except translations. Filename should be like `hereLangCode.json` for example `en.json`
 2. Install plugin from JetBrains plugin repository.
 3. To open plugin window use key shortcut `ctrl+alt+shift+k`, or click on tab on bottom of the screen.
 4. Click `settings` button and pass path for dir with translations (relative to project root).
