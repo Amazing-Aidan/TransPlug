@@ -10,7 +10,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -166,7 +166,7 @@ public class FilesService {
 
             if(localeIndex < 0) throw new Exception();
 
-            String language = filename.substring(localeIndex + 7);
+            String language = filename.substring(localeIndex - 2);
             language = language.substring(0, language.lastIndexOf("."));
 
             if(this.files.get(language) != null){

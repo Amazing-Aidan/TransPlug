@@ -1,0 +1,89 @@
+<idea-plugin>
+    <id>com.androidinlondon.transplug</id>
+    <name>TransPlug</name>
+    <version>0.6.0</version>
+    <vendor email="ja@jgorowskipl" url="http://www.androidinlondon.com">Android in London</vendor>
+
+    <description><![CDATA[
+   <p><b>TransPlug<b> is a simple plugin for JetBrains IDE (PhpStorm, WebStorm etc.)
+    It provides easy way to manage translation files in your project. <p>
+
+    <h4>How to use</h4>
+    <ol>
+      <li> Prepare translation files. All translations should be in one dir. Filename should be like `hereLangCode.json` for example `en.json`</li>
+      <li> Only language files in the directory</li>
+      <li> Install plugin from JetBrains plugin repository.</li>
+      <li> To open plugin window use key shortcut `ctrl+alt+shift+k`, or click on tab on bottom of the screen.</li>
+      <li> Click `settings` button and pass path for dir with translations (relative to project root).</li>
+      <li> Enjoy!</li>
+    </ol>
+
+    <h4>Features</h4>
+    <ul>
+      <li> JSON files support </li>
+      <li> All translations shown in readable table </li>
+      <li> Incomplete translations are marked </li>
+      <li> Translation can be added and edited </li>
+    </li>
+
+    <h4>Known issues</h4>
+    <ul>
+      <li> Plugin doesn't work properly when IDE has opened more then one project </li>
+    </ul>
+
+    See me on <a href="https://github.com/kubut/TransPlug">Github</a>
+  ]]></description>
+
+    <change-notes><![CDATA[
+    <b>0.5.0</b>
+    <ul>
+      <li> Fixed right-menu</li>
+      <li> Fixed add option</li>
+      <li> Added option 'Show file' to right menu</li>
+    </ul>
+
+    <b>0.4.0</b>
+    <ul>
+      <li> Translation can be added by right-click</li>
+      <li> Translation's key can be copied by right-click</li>
+      <li> Few fixes</li>
+    </ul>
+
+    <b>0.3.1</b>
+    <ul>
+      <li> Translation can be added</li>
+      <li> Some little fixes</li>
+    </ul>
+
+    <b>0.2.0</b>
+    <ul>
+      <li> Incomplete translations are marked</li>
+      <li> Translation can be edited</li>
+    </ul>
+
+    <b>0.1.0</b>
+    <ul>
+      <li> All translations shown in readable table</li>
+    </ul>
+  ]]></change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="139.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+      <toolWindow id="Translations"  anchor="bottom" factoryClass="TranslationToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+      <action id="transplug.showTranslationToolWindow" class="ShowTranslationToolWindowAction" text="Show translations"
+              description="Show list of translations in project">
+        <add-to-group group-id="ToolsMenu" anchor="first"/>
+        <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt K"/>
+      </action>
+    </actions>
+
+  </idea-plugin>
